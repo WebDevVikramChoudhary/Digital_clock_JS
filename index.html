@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital clock using javascript</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        border: 0.2rem solid black;
+      }
+      h1 {
+        color: #5a5a5a;
+        font-size: 2rem;
+      }
+      #clock {
+        background-color: rgb(226, 194, 255);
+        padding: 1em;
+      }
+    </style>
+    <div class="container">
+      <h1>Curent Time</h1>
+      <div id="clock"></div>
+    </div>
+
+    <script>
+      let clock = document.querySelector("#clock");
+
+      setInterval(function myFunction() {
+        let date = new Date();
+        clock.innerHTML = date.toLocaleTimeString();
+      }, 1000);
+      myFunction();
+    </script>
+  </body>
+</html>
